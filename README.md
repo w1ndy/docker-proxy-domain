@@ -48,6 +48,8 @@ Some Docker images require to access various blocked or slow services (e.g. GitH
   sudo systemctl restart docker
   ```
 
+4. docker-compose
+
 ## Installation
 
 1. Build base image:
