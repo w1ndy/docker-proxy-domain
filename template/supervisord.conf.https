@@ -1,0 +1,8 @@
+[program:https]
+command=/usr/bin/proxy_socat __DOMAIN_NAME__ 443
+autorestart=yes
+stdout_logfile=/dev/fd/1
+stdout_logfile_maxbytes=0
+stderr_logfile=/dev/fd/1
+stderr_logfile_maxbytes=0
+

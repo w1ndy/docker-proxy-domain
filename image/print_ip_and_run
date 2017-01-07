@@ -1,0 +1,8 @@
+#!/bin/sh
+
+ip=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
+echo "Container IP Address: $ip"
+
+echo "Starting supervisord..."
+/usr/bin/supervisord -c /etc/supervisord.conf
+

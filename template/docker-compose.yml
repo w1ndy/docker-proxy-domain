@@ -1,0 +1,4 @@
+    __DOMAIN_NAME__:
+        build: '___DOMAIN_NAME__/'
+        network_mode: 'bridge'
+        restart: 'always'

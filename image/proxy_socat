@@ -1,0 +1,6 @@
+#!/bin/sh
+
+ip=$(dig +short @10.10.0.21 $1 | awk '{match($0,/[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/); ip = substr($0,RSTART,RLENGTH); print ip}' | grep . | head -n 1)
+echo "Resolved IP for $1: $ip"
+/usr/bin/socat TCP4-LISTEN:$2,fork,reuseaddr PROXY:127.0.0.1:$ip:$2,proxyport=9987
+
